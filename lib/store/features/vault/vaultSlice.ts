@@ -1,4 +1,4 @@
-import { Game } from '@/components/GameGrid';
+import { Game } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 type InitialState = {
