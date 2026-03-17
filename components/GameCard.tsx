@@ -8,6 +8,7 @@ import { Bookmark } from 'lucide-react';
 
 interface GameProps {
 	game: Game;
+	isLink?: boolean;
 }
 
 const imageStyle = {
@@ -16,15 +17,11 @@ const imageStyle = {
 	height: '200px',
 };
 
-function GameCard({ game }: GameProps) {
+const GameCardContent = ({ game }: { game: Game }) => {
 	const { name, background_image, rating } = game;
-	const slugName = name.toLowerCase().replaceAll(' ', '-');
 
 	return (
-		<Link
-			href={`/genre/${slugName}`}
-			className="border border-slate-300 rounded-sm p-4 relative aspect-video"
-		>
+		<>
 			<Image
 				src={background_image}
 				alt={name}
@@ -37,7 +34,29 @@ function GameCard({ game }: GameProps) {
 			<h3 className="text-xl font-semibold">{name}</h3>
 			<h3 className="text-lg">{rating}</h3>
 			<Bookmark />
-		</Link>
+		</>
+	);
+};
+
+function GameCard({ game, isLink = true }: GameProps) {
+	const { slug, genres } = game;
+	const genre = genres[0].name.toLowerCase();
+
+	return (
+		<>
+			{isLink ? (
+				<Link
+					href={`/${genre}/${slug}`}
+					className="border border-slate-300 rounded-sm p-4 relative aspect-video h-max"
+				>
+					<GameCardContent game={game} />
+				</Link>
+			) : (
+				<div className="border border-slate-300 rounded-sm p-4 relative aspect-video h-max">
+					<GameCardContent game={game} />
+				</div>
+			)}
+		</>
 	);
 }
 
