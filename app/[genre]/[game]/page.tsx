@@ -1,12 +1,12 @@
-async function Game({ params }: { params: { game: string } }) {
-    const { game } = await params;
-    const gameName = game.replaceAll(/%20/g, ' ');
+import GameCard from '@/components/GameCard';
+import { getGame } from '@/lib/api';
+import type { Game } from '@/types';
 
-    return (
-        <div>
-            <h2 className="text-2xl font-semibold">{gameName}</h2>
-        </div>
-    );
+async function Game({ params }: { params: { game: string } }) {
+	const { game } = await params;
+	const gameDetails: Game = await getGame(game);
+
+	return <GameCard game={gameDetails} isLink={false} />;
 }
 
 export default Game;

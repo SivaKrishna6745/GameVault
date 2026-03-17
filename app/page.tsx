@@ -1,16 +1,9 @@
 import GameGrid from '@/components/GameGrid';
+import { getAllGames } from '@/lib/api';
 import { Game } from '@/types';
 
-async function getGames() {
-	const API_KEY = process.env.RAWG_API_KEY;
-	const response = await fetch(`https:/api.rawg.io/api/games?key=${API_KEY}`);
-	if (!response.ok) throw new Error('Error while fetching data!!');
-	const gamesData = await response.json();
-	return gamesData.results;
-}
-
 export default async function Home() {
-	const games: Game[] = await getGames();
+	const games: Game[] = await getAllGames();
 	console.log(games);
 
 	return (
