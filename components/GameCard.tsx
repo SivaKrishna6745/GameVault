@@ -31,9 +31,13 @@ const GameCardContent = ({ game }: { game: Game }) => {
 				className="object-contain rounded-sm"
 				style={imageStyle}
 			/>
-			<h3 className="text-xl font-semibold">{name}</h3>
+			<div className="flex justify-between">
+				<h3 className="text-xl font-semibold">{name}</h3>
+				<button className="mr-4">
+					<Bookmark size={28} />
+				</button>
+			</div>
 			<h3 className="text-lg">{rating}</h3>
-			<Bookmark />
 		</>
 	);
 };
@@ -41,18 +45,17 @@ const GameCardContent = ({ game }: { game: Game }) => {
 function GameCard({ game, isLink = true }: GameProps) {
 	const { slug, genres } = game;
 	const genre = genres[0].name.toLowerCase();
+	const cardClassName =
+		'border border-slate-300 rounded-sm p-4 relative aspect-video h-max flex flex-col gap-4';
 
 	return (
 		<>
 			{isLink ? (
-				<Link
-					href={`/${genre}/${slug}`}
-					className="border border-slate-300 rounded-sm p-4 relative aspect-video h-max"
-				>
+				<Link href={`/${genre}/${slug}`} className={cardClassName}>
 					<GameCardContent game={game} />
 				</Link>
 			) : (
-				<div className="border border-slate-300 rounded-sm p-4 relative aspect-video h-max">
+				<div className={cardClassName}>
 					<GameCardContent game={game} />
 				</div>
 			)}
