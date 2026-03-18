@@ -29,7 +29,9 @@ export const vaultSlice = createSlice({
 			}
 		},
 		removeFromVault: (state: InitialState, action: PayloadAction<number>) => {
-			state.savedGames.filter((game: Game) => game.id !== action.payload);
+			state.savedGames = state.savedGames.filter(
+				(game: Game) => game.id !== action.payload,
+			);
 		},
 		rehydrateVault: (state: InitialState, action: PayloadAction<Game[]>) => {
 			state.savedGames = action.payload;
