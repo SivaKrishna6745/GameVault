@@ -31,7 +31,8 @@ export default function RootLayout({
 				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
 			>
 				<Navbar />
-				<div className="flex justify-around gap-10">
+				<div className="h-0.5 w-full mb-4 bg-slate-500" />
+				<div className="grid md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_3fr] xl:grid-cols-[1fr_4fr] gap-8">
 					<StoreProvider>
 						<Sidebar />
 						{children}
