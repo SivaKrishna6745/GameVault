@@ -7,7 +7,9 @@ async function Genre({ params }: { params: { genre: string } }) {
 
 	return (
 		<div>
-			<h2 className="text-2xl font-semibold capitalize">{genre} games</h2>
+			<h2 className="text-2xl font-semibold capitalize text-center mb-4">
+				{genre} games
+			</h2>
 			<GameGrid games={games} />
 		</div>
 	);

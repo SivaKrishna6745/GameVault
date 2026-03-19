@@ -5,7 +5,7 @@ export type Platform = {
 	image_background: string;
 };
 
-type PlatformWrapper = {
+export type PlatformWrapper = {
 	platform: Platform;
 };
 
@@ -36,7 +36,7 @@ type StoreWrapper = {
 	store: Store;
 };
 
-type Tag = {
+export type Tag = {
 	id: number;
 	name: string;
 	slug: string;
@@ -47,7 +47,10 @@ export type Game = {
 	id: number;
 	slug: string;
 	name: string;
+	released: string;
 	background_image: string;
+	background_image_additional: string;
+	website: string;
 	rating: number;
 	platforms: PlatformWrapper[];
 	parent_platforms: ParentPlatformWrapper[];

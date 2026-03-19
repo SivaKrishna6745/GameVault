@@ -21,8 +21,15 @@ function MyGamesPage() {
 		);
 	return (
 		<div>
-			<h3 className="text-2xl font-semibold">My Vault</h3>
-			<GameGrid games={games} />
+			<h3 className="text-2xl font-semibold text-center mb-4">My Vault</h3>
+			{games.length > 0 ? (
+				<GameGrid games={games} />
+			) : (
+				<div className="text-lg text-slate-400 mt-4">
+					There are no games in your Vault. Go back and bookmark some games to
+					see!!
+				</div>
+			)}
 		</div>
 	);
 }
