@@ -1,6 +1,6 @@
 'use client';
 
-import { Genre } from '@/types';
+import { Genre } from '@/src/types';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 

@@ -1,5 +1,5 @@
-import GameGrid from '@/components/GameGrid';
-import { getGamesByGenre } from '@/lib/api';
+import GameGrid from '@/src/components/GameGrid';
+import { getGamesByGenre } from '@/src/lib/api';
 
 async function Genre({ params }: { params: { genre: string } }) {
 	const { genre } = await params;

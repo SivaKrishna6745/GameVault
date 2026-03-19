@@ -1,7 +1,7 @@
 'use client';
 
-import { updateRating } from '@/lib/store/features/vault/vaultSlice';
-import { useAppDispatch } from '@/lib/store/hooks';
+import { updateRating } from '@/src/lib/store/features/vault/vaultSlice';
+import { useAppDispatch } from '@/src/lib/store/hooks';
 import { Star } from 'lucide-react';
 import React, { useState } from 'react';
 

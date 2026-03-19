@@ -1,4 +1,4 @@
-import { getAllGenres } from '@/lib/api';
+import { getAllGenres } from '@/src/lib/api';
 import SidebarClient from './SidebarClient';
 
 async function Sidebar() {

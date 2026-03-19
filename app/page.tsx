@@ -1,6 +1,6 @@
-import GameGrid from '@/components/GameGrid';
-import { getAllGames } from '@/lib/api';
-import { Game } from '@/types';
+import GameGrid from '@/src/components/GameGrid';
+import { getAllGames } from '@/src/lib/api';
+import { Game } from '@/src/types';
 
 export default async function Home() {
 	const games: Game[] = await getAllGames();

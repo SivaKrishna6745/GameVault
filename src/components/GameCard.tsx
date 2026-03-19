@@ -2,14 +2,14 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { Game, PlatformWrapper, Tag } from '@/types';
+import { Game, PlatformWrapper, Tag } from '@/src/types';
 import Link from 'next/link';
 import { Bookmark } from 'lucide-react';
-import { useAppDispatch, useAppSelector } from '@/lib/store/hooks';
+import { useAppDispatch, useAppSelector } from '@/src/lib/store/hooks';
 import {
 	addToVault,
 	removeFromVault,
-} from '@/lib/store/features/vault/vaultSlice';
+} from '@/src/lib/store/features/vault/vaultSlice';
 import Carousel from './Carousel';
 import { usePathname } from 'next/navigation';
 import UserRating from './UserRating';

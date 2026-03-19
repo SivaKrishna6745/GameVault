@@ -2,8 +2,8 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
-import { useAppSelector } from '@/lib/store/hooks';
-import GameGrid from '@/components/GameGrid';
+import { useAppSelector } from '@/src/lib/store/hooks';
+import GameGrid from '@/src/components/GameGrid';
 
 function MyGamesPage() {
 	const games = useAppSelector((state) => state.vault.savedGames);

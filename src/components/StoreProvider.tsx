@@ -1,7 +1,7 @@
 'use client';
 
-import { rehydrateVault } from '@/lib/store/features/vault/vaultSlice';
-import { store } from '@/lib/store/store';
+import { rehydrateVault } from '@/src/lib/store/features/vault/vaultSlice';
+import { store } from '@/src/lib/store/store';
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 
