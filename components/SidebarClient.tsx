@@ -14,7 +14,7 @@ function SidebarClient({ genres }: { genres: Genre[] }) {
 	const pathname = usePathname().replace('/', '');
 
 	return (
-		<div className="flex flex-col gap-4 w-64 sticky top-0 h-full">
+		<div className="flex flex-col gap-4 w-64 sticky top-0 h-screen">
 			{genres.map((genre: Genre) => {
 				const isActive = pathname.toLowerCase() === genre.slug.toLowerCase();
 
