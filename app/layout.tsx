@@ -32,7 +32,7 @@ export default function RootLayout({
 			>
 				<Navbar />
 				<div className="h-0.5 w-full mb-4 bg-slate-500" />
-				<div className="grid md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_3fr] xl:grid-cols-[1fr_4fr] gap-8">
+				<div className="p-4 grid md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_3fr] xl:grid-cols-[1fr_4fr] gap-8">
 					<StoreProvider>
 						<Sidebar />
 						{children}
