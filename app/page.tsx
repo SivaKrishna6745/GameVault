@@ -4,7 +4,6 @@ import { Game } from '@/src/types';
 
 export default async function Home() {
 	const games: Game[] = await getAllGames();
-	console.log(games);
 
 	return (
 		<div className="flex flex-col gap-4">
