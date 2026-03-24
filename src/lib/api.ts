@@ -30,3 +30,12 @@ export const getGame = async (slug: string) => {
 	const gamesData = await response.json();
 	return gamesData;
 };
+
+export const searchGames = async (searchQuery: string) => {
+	const response = await fetch(
+		`${BASE_URL}/games?key=${API_KEY}&search=${searchQuery}`,
+	);
+	if (!response.ok) throw new Error('Error while searching games');
+	const searchedGamesData = await response.json();
+	return searchedGamesData.results;
+};
