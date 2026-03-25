@@ -19,10 +19,11 @@ function MenuContent() {
 	const router = useRouter();
 
 	useEffect(() => {
+		if (!searchInput.trim()) return;
 		if (debouncedValue) {
-			router.push(`/search/${debouncedValue}`);
+			router.push(`/search/${encodeURIComponent(debouncedValue)}`);
 		}
-	}, [debouncedValue, router]);
+	}, [debouncedValue, router, searchInput]);
 
 	return (
 		<>
@@ -34,6 +35,11 @@ function MenuContent() {
 					value={searchInput}
 					onChange={handleSearch}
 					className={`border-b border-slate-300 outline-none text-lg px-1/2 py-1 ${isMobile ? '' : isTablet ? 'w-sm' : 'w-md'}`}
+				/>
+				<X
+					className={`absolute right-10 cursor-pointer transition-all duration-150 ${searchInput ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-2'}`}
+					size={20}
+					onClick={() => setSearchInput('')}
 				/>
 				<Search className="absolute right-0" size={22} />
 			</div>
