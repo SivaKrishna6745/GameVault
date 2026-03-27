@@ -14,10 +14,8 @@ const useInfiniteScroll = () => {
 		const observer = new IntersectionObserver((entries) => {
 			const entry = entries[0];
 			if (entry.isIntersecting) {
-				console.log('intersecting');
 				setIsInView(true);
 			} else {
-				console.log('not intersecting');
 				setIsInView(false);
 			}
 		}, options);
@@ -25,6 +23,7 @@ const useInfiniteScroll = () => {
 		if (sentinelRef?.current) observer.observe(sentinelRef?.current);
 
 		return () => {
+			// eslint-disable-next-line react-hooks/exhaustive-deps
 			if (sentinelRef?.current) observer.unobserve(sentinelRef?.current);
 		};
 	}, [sentinelRef]);
