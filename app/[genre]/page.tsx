@@ -1,4 +1,4 @@
-import GameGrid from '@/src/components/GameGrid';
+import GameListManager from '@/src/components/GameListManager';
 import { getGamesByGenre } from '@/src/lib/api';
 
 async function Genre({ params }: { params: { genre: string } }) {
@@ -10,7 +10,7 @@ async function Genre({ params }: { params: { genre: string } }) {
 			<h2 className="text-2xl font-semibold capitalize text-center mb-4">
 				{genre} games
 			</h2>
-			<GameGrid games={games} />
+			<GameListManager currentGenre={genre} initialGames={games} />
 		</div>
 	);
 }

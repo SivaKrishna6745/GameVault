@@ -1,4 +1,4 @@
-import GameGrid from '@/src/components/GameGrid';
+import GameListManager from '@/src/components/GameListManager';
 import { searchGames } from '@/src/lib/api';
 import React from 'react';
 
@@ -14,7 +14,7 @@ async function page({ params }: { params: { query: string } }) {
 				<span className="text-blue-400">{decodedQuery}</span>
 			</h2>
 			{games && games.length > 0 ? (
-				<GameGrid games={games} />
+				<GameListManager search={query} initialGames={games} />
 			) : (
 				<div className="flex flex-col items-center justify-center gap-4 py-20 opacity-60">
 					<span className="text-6xl mb-2">🔍</span>
