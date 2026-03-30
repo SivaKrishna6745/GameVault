@@ -36,7 +36,7 @@ const GameCardContent = ({ game, isLink }: { game: Game; isLink: boolean }) => {
 		Boolean,
 	);
 
-	const tagsList = tags.map((tag: Tag) => (
+	const tagsList = tags?.map((tag: Tag) => (
 		<li
 			key={tag.slug}
 			className="bg-slate-500 rounded-md px-3 py-1 text-sm tracking-wide"
@@ -45,7 +45,7 @@ const GameCardContent = ({ game, isLink }: { game: Game; isLink: boolean }) => {
 		</li>
 	));
 
-	const platformsList = platforms.map((plWrapper: PlatformWrapper) => {
+	const platformsList = platforms?.map((plWrapper: PlatformWrapper) => {
 		const pl = plWrapper.platform;
 		return (
 			<li
