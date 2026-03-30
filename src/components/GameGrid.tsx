@@ -9,9 +9,11 @@ interface GameGridProps {
 
 const GameGrid = forwardRef<HTMLDivElement, GameGridProps>(({ games }, ref) => {
 	return (
-		<div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
+		<div className="columns-1 lg:columns-2 xl:columns-3 gap-6 space-y-6">
 			{games.map((game: Game) => (
-				<GameCard key={game.id} game={game} />
+				<div key={game.id} className="break-inside-avoid">
+					<GameCard game={game} />
+				</div>
 			))}
 			<div ref={ref} className="h-10 invisible"></div>
 		</div>
